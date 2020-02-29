@@ -1,13 +1,27 @@
 import React from 'react';
-import Button from './components/common/Button';
-import Alert from './components/common/Alert';
-import Card from './components/common/Card';
+
+// Components
+import Home from './containers/Home';
+import Navbar from './components/common/Navbar';
+import Container from './components/common/Container';
+
+
+// React router
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
 
   return (
     <div className="App">
-      React project
+        <Router>
+          <Navbar />
+          <Switch>
+            <Container>
+              <Route exact path="/" component={Home} />
+            </Container>
+            
+          </Switch>
+        </Router>
     </div>
   );
 }
